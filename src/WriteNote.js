@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function WriteNote({  addNoteClick,setTextArea,textArea}) {
-  const [inputText, setinputText] = useState("");
+function WriteNote({  addNoteClick, setTextArea ,textArea , setinputText ,inputText     }) {
+  // const [inputText, setinputText] = useState("");
   
 
   const [writenoteTitle, setWritenoteTitle] = useState("Write a Note");
@@ -12,12 +12,12 @@ function WriteNote({  addNoteClick,setTextArea,textArea}) {
   //   console.log( "handleClick ", e)}
 
   return (
-    <div className="writenote  p-3 rounded mt-2 mb-2 me-2 border border-5 border-dark">
+    <div className="theform     border border-5 border-dark rounded p-3 mt-2 mb-2  ">
       <p className="writenoteTitle fw-bold"> My Notes </p>
 
 
 
-      <div className="noteEdit">
+      <div className="noteEdit needs-validation">
         <input
           type="text"
           value={inputText}
@@ -27,22 +27,19 @@ function WriteNote({  addNoteClick,setTextArea,textArea}) {
           id="title"
           placeholder="Note title"
           aria-label="Username"
-          aria-describedby="addon-wrapping"
+          aria-describedby="addon-wrapping" required
         ></input>
-        <textarea
-          value={textArea}
+
+        <textarea value={textArea}  
           onChange={(e) => setTextArea(e.target.value)}
-          className=" form-control mb-5 border  border-3 border-dark"
-          id="textbody"
-          placeholder="Write your note.."
-        ></textarea>
+          className="form-control mb-5 border border-3 border-dark"
+          id="textbody" placeholder="Write your note.." ></textarea>
    
       
       <button
           onClick={addNoteClick}
           type="button"
-          className="btn btn-dark  btn-block"
-        >
+          className="btn btn-dark  btn-block">
           Add
         </button>
       
