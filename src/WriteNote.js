@@ -12,8 +12,8 @@ function WriteNote({  addNoteClick,setTextArea,textArea}) {
   //   console.log( "handleClick ", e)}
 
   return (
-    <div className="writenote  p-3 rounded mt-2 mb-2 me-2 ">
-      <p className="writenoteTitle"> write note Title </p>
+    <div className="writenote  p-3 rounded mt-2 mb-2 me-2 border border-5 border-dark">
+      <p className="writenoteTitle fw-bold"> My Notes </p>
 
 
 
@@ -23,7 +23,7 @@ function WriteNote({  addNoteClick,setTextArea,textArea}) {
           value={inputText}
           onChange={(e) => setinputText(e.target.value)
           }
-          className="form-control mb-2"
+          className="form-control mb-2 border  border-3 border-dark"
           id="title"
           placeholder="Note title"
           aria-label="Username"
@@ -32,18 +32,16 @@ function WriteNote({  addNoteClick,setTextArea,textArea}) {
         <textarea
           value={textArea}
           onChange={(e) => setTextArea(e.target.value)}
-          className=" form-control"
+          className=" form-control mb-5 border  border-3 border-dark"
           id="textbody"
           placeholder="Write your note.."
         ></textarea>
-        {/* <button onClick={addNoteClick} type="button" className="btn btn-primary">Add1</button> */}
-        {/* <button onClick={handleClick} type="button" className="btn btn-primary">Add2</button>
-            <button onClick={(e)=> ClickWithParameter("mario", e)} type="button" className="btn btn-primary">Add3</button> */}
+   
       
       <button
           onClick={addNoteClick}
           type="button"
-          className="btn btn-primary"
+          className="btn btn-dark  btn-block"
         >
           Add
         </button>

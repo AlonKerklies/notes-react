@@ -1,7 +1,15 @@
-/* .App {
-  text-align: center;
-}
+body{  background-color:#2424F0;
+/* box-sizing: border-box; */
 
+}
+.container{
+ 
+  margin: auto;  
+}
+.App {
+  margin: auto;  
+}
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,42 +45,28 @@
   }
 } */
 
-body{  background-color: rgb(224, 224, 224);
-box-sizing: border-box;
-}
 
-.task {
+
+/* .task {
   background-color: rgb(255, 254, 248);
  border: rgb(241, 245, 245) 1px solid;
   }
-
+*/
 .note-in-pack {
   background-color: rgb(255, 255, 255);
-  }
+  } 
 
 .note-in-pack:hover{
 background-color: rgb(235, 247, 255);
 }
 
-.App{ 
- 
-
-  /* width: 100%; */
-   /* display: flex;   */
-  
-}
 
 
 
 
 
 
-.container{
 
- margin:auto ;
- margin-top: 0;
- margin-bottom: 0;
-}
 
 
 .note-list-header{
@@ -81,17 +75,31 @@ background-color: rgb(235, 247, 255);
 
 .NoteList{
   /* background-color: rgba(196, 255, 58, 0.349); */
-  width: 25%;
+  width: 200px; 
+ 
  
 }
 
 .writenote{
-background-color: rgb(255, 255, 255);
-/* border-radius: 5px; */
-width: 100%;
  
+ 
+ 
+ 
+  /* margin: auto;   */
+background-color:#FAFA34;
+ width: 350px; 
+
+
+/* border-radius: 5px; */
  
 }
+
+
+.writenote button{
+  width:  100%;
+ }
+
+
 
 
  
