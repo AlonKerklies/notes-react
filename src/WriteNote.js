@@ -12,7 +12,7 @@ function WriteNote({  addNoteClick, setTextArea ,textArea , setinputText ,inputT
   //   console.log( "handleClick ", e)}
 
   return (
-    <div className="theform     border border-5 border-dark rounded p-3 mt-2 mb-2  ">
+    <div className="theform  border border-5 border-dark rounded p-3 mb-2  ">
       <p className="writenoteTitle fw-bold"> My Notes </p>
 
 

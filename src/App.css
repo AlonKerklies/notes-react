@@ -1,16 +1,51 @@
 body{  background-color:#2424F0;
-/* box-sizing: border-box; */
+  box-sizing: border-box;  
 
 }
 .container{
  
   margin: auto;  
+  
 }
 .App {
-  text-align: center;
-  margin: auto;  
+ 
+  background-color:#2424F0;
+ 
 }
  
+.modalGeneral{
+  background-color:#f50ece;
+ 
+
+}
+
+.PopMPdalButtom{
+  z-index: 3;
+}
+
+
+
+.note-in-pack-title{
+ 
+  }
+
+  .note-in-pack-title button{
+background-color: #ffffff00;
+border: 0;
+margin: 0;
+padding: 0;
+
+  }
+
+  .note-in-pack-title button:hover  {
+    background-color: #ffffff00;
+ }
+
+  .note-in-pack-title button:hover svg{
+ transform: scale(1.2);}
+
+
+
 .theform{
   margin: auto;   
  background-color:#FAFA34;
@@ -27,8 +62,8 @@ body{  background-color:#2424F0;
 .test100{
   margin: auto;
 width: 110px;
-height: 110px;
-background-color: aliceblue;
+height: 22px;
+background-color: rgb(236, 66, 14);
 }
 
 .note-in-pack {
@@ -66,16 +101,7 @@ background-color: rgb(235, 247, 255);
 }
 
 
-/* .theform{
- margin: auto;   
-background-color:#FAFA34;
- width: 350px; 
  
-} */
-
-
-
-.
 
 
 
@@ -89,4 +115,19 @@ background-color:#FAFA34;
 .trashIcon {
   cursor:pointer  ;
 float: right;
+}
+
+
+
+.PopMPdalButtom{
+  background-color: #67918d;
+  height: 100%;
+    z-index: 2;  
+}
+
+
+.PopUpModal{
+  z-index: 3;  
+  background-color: #09439b;
+
 }
