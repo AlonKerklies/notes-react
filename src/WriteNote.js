@@ -1,21 +1,9 @@
-import { useState } from "react";
 
 function WriteNote({  addNoteClick, setTextArea ,textArea , setinputText ,inputText     }) {
-  // const [inputText, setinputText] = useState("");
-  
-
-  const [writenoteTitle, setWritenoteTitle] = useState("Write a Note");
-
-  //  const ClickWithParameter = (name, e) => {console.log( "this name is::: " + name ,  e.target ,e)}
-  //   const handleClick = (e) => {
-  //    setWritenoteTitle ('Write better Note') ;
-  //   console.log( "handleClick ", e)}
 
   return (
-    <div className="theform  border border-5 border-dark rounded p-3 mb-2  ">
+    <div className="theform  border border-5 border-dark rounded p-3 mb-2  amazing-yellow">
       <p className="writenoteTitle fw-bold"> My Notes </p>
-
-
 
       <div className="noteEdit needs-validation">
         <input
@@ -35,7 +23,6 @@ function WriteNote({  addNoteClick, setTextArea ,textArea , setinputText ,inputT
           className="form-control mb-5 border border-3 border-dark"
           id="textbody" placeholder="Write your note.." ></textarea>
    
-      
       <button
           onClick={addNoteClick}
           type="button"
@@ -44,10 +31,8 @@ function WriteNote({  addNoteClick, setTextArea ,textArea , setinputText ,inputT
         </button>
       
       </div>
-
-  
-
     </div>
   );
+  
 }
 export default WriteNote;

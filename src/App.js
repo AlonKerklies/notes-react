@@ -3,34 +3,29 @@ import uuid from "react-uuid";
 import "./App.css";
 import WriteNote from "./WriteNote";
 import NoteList from "./NoteList";
-import PopUpModal from "./PopUpModal";
 
 function App() {
   const [textArea, setTextArea] = useState("");
-  console.log(textArea);
 
   const [inputText, setinputText] = useState("");
-  console.log(inputText);
 
+ 
   function ConfirmDelete() {
-    // פונקציית אישור מחיקה
     window.confirm("“Are you sure you want to delete your note?");
   }
 
   function NoTextNote() {
-    // שגיאה אין טקסט בבחירה
     window.confirm("note’s text is mandatory");
   }
 
   const currentDate = new Date();
+
   const [notes, setNotes] = useState([]);
+
   const addNoteClick = () => {
-    console.log("click ad note");
-    console.log(textArea);
     if (textArea.trim() === "") {
       return NoTextNote();
     } else {
-      console.log("there is text");
     }
     const newNoteAfterClick = {
       id: uuid(),
@@ -46,14 +41,37 @@ function App() {
           hour: "numeric",
           minute: "numeric",
           hour12: true,
-        }),
+        }), 
+        update: "", 
+       
     };
+    setTextArea("");
+    setinputText("");
 
     setNotes([newNoteAfterClick, ...notes]); // מכניס את החדש לתוך רשימת הישנים
   };
 
+const ChangeNoteClick = (theNoteWithThisID,mainMassage,title) => {
+//Find index of specific object using findIndex method.   
+let objIndex; 
+ setinputText((prevShow) => !prevShow)
+objIndex = notes.findIndex((obj => obj.id == theNoteWithThisID));
+notes[objIndex].mainMassage = mainMassage
+notes[objIndex].title = title   
+
+
+ notes[objIndex].update = "Update: " +currentDate.toLocaleString("en-US", {
+   month: "short", day: "numeric",}) + "Th " +
+  currentDate.toLocaleString("en-US", {
+  hour: "numeric", minute: "numeric",  hour12: true, })
+  console.log("After update: ", notes[objIndex])
+}
+
+
+
+
+   // מוחק כפתור
   const deleteNote = (theNoteWithThisID) => {
-    // מוחק כפתור
     ConfirmDelete(); // אישור מחיקה
     setNotes(notes.filter((note) => note.id !== theNoteWithThisID));
   };
@@ -69,25 +87,11 @@ function App() {
           setinputText={setinputText}
         />
 
-        {/* <div className="test100">test cube</div> */}
-
-        <NoteList notes={notes} deleteNote={deleteNote} />
+        <NoteList notes={notes} deleteNote={deleteNote} setinputText={setinputText} inputText={inputText}  setTextArea={setTextArea}  textArea={textArea}
+          ChangeNoteClick={ChangeNoteClick}/>
       </div>
     </div>
   );
 }
-
 export default App;
 
-// const deleteTask = (id) => {
-//   console.log("delete" + id);
-//   setTasks(tasks.filter((task) => task.id !== id));
-// };
-
-// const [tasks, setTasks] = useState([
-//   { title: "title1", text: textArea, noteDate: Date.now(), id: 1 },
-
-//   { title: "title2", text: "text inside222", noteDate: Date.now(), id: 2 },
-
-//   { title: "title3", text: "text inside333", noteDate: Date.now(), id: 3 },
-// ]);
