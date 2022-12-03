@@ -6,10 +6,9 @@ import NoteList from "./NoteList";
 
 function App() {
   const [textArea, setTextArea] = useState("");
-
+  const [notes, setNotes] = useState([]);
   const [inputText, setinputText] = useState("");
 
- 
   function ConfirmDelete() {
     window.confirm("“Are you sure you want to delete your note?");
   }
@@ -20,7 +19,7 @@ function App() {
 
   const currentDate = new Date();
 
-  const [notes, setNotes] = useState([]);
+
 
   const addNoteClick = () => {
     if (textArea.trim() === "") {
@@ -66,9 +65,6 @@ notes[objIndex].title = title
   hour: "numeric", minute: "numeric",  hour12: true, })
   console.log("After update: ", notes[objIndex])
 }
-
-
-
 
    // מוחק כפתור
   const deleteNote = (theNoteWithThisID) => {

@@ -4,7 +4,6 @@ function WriteNote({  addNoteClick, setTextArea ,textArea , setinputText ,inputT
   return (
     <div className="theform  border border-5 border-dark rounded p-3 mb-2  amazing-yellow">
       <p className="writenoteTitle fw-bold"> My Notes </p>
-
       <div className="noteEdit needs-validation">
         <input
           type="text"
