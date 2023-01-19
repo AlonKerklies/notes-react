@@ -19,8 +19,6 @@ function App() {
 
   const currentDate = new Date();
 
-
-
   const addNoteClick = () => {
     if (textArea.trim() === "") {
       return NoTextNote();
@@ -40,42 +38,47 @@ function App() {
           hour: "numeric",
           minute: "numeric",
           hour12: true,
-        }), 
-        update: "", 
-       
+        }),
+      update: "",
     };
     setTextArea("");
     setinputText("");
 
-    setNotes([newNoteAfterClick, ...notes]); // מכניס את החדש לתוך רשימת הישנים
+    setNotes([newNoteAfterClick, ...notes]);
   };
 
-const ChangeNoteClick = (theNoteWithThisID,mainMassage,title) => {
-//Find index of specific object using findIndex method.   
-let objIndex; 
- setinputText((prevShow) => !prevShow)
-objIndex = notes.findIndex((obj => obj.id == theNoteWithThisID));
-notes[objIndex].mainMassage = mainMassage
-notes[objIndex].title = title   
+  const ChangeNoteClick = (theNoteWithThisID, mainMassage, title) => {
+    let objIndex;
+    setinputText((prevShow) => !prevShow);
+    objIndex = notes.findIndex((obj) => obj.id == theNoteWithThisID);
+    notes[objIndex].mainMassage = mainMassage;
+    notes[objIndex].title = title;
 
+    notes[objIndex].update =
+      "Update: " +
+      currentDate.toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+      }) +
+      "Th " +
+      currentDate.toLocaleString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      });
+    console.log("After update: ", notes[objIndex]);
+  };
 
- notes[objIndex].update = "Update: " +currentDate.toLocaleString("en-US", {
-   month: "short", day: "numeric",}) + "Th " +
-  currentDate.toLocaleString("en-US", {
-  hour: "numeric", minute: "numeric",  hour12: true, })
-  console.log("After update: ", notes[objIndex])
-}
-
-   // מוחק כפתור
   const deleteNote = (theNoteWithThisID) => {
-    ConfirmDelete(); // אישור מחיקה
+    ConfirmDelete();
     setNotes(notes.filter((note) => note.id !== theNoteWithThisID));
   };
 
   return (
     <div className="App  ">
       <div className="container mt-5 ">
-        <WriteNote  className="  "
+        <WriteNote
+          className="  "
           addNoteClick={addNoteClick}
           textArea={textArea}
           setTextArea={setTextArea}
@@ -83,11 +86,17 @@ notes[objIndex].title = title
           setinputText={setinputText}
         />
 
-        <NoteList notes={notes} deleteNote={deleteNote} setinputText={setinputText} inputText={inputText}  setTextArea={setTextArea}  textArea={textArea}
-          ChangeNoteClick={ChangeNoteClick}/>
+        <NoteList
+          notes={notes}
+          deleteNote={deleteNote}
+          setinputText={setinputText}
+          inputText={inputText}
+          setTextArea={setTextArea}
+          textArea={textArea}
+          ChangeNoteClick={ChangeNoteClick}
+        />
       </div>
     </div>
   );
 }
 export default App;
-

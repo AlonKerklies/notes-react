@@ -36,7 +36,7 @@ function PopUpModal({
 
   return (
     <>
-      {/* -------- הפתק הקטן-------------- */}
+      {/* -------small note------ */}
       
       <div     
         className="note-in-pack  mt-2 p-3 pb-0  rounded  border border-5 border-dark"
@@ -65,7 +65,7 @@ function PopUpModal({
           </span>
         </div>
         
-        <p>{notemainMassage}</p> {/* תוכן הודעה */}
+        <p>{notemainMassage}</p>  
         <span className="note-date amazing-yellow m-0 p-0">{noteupdate}</span>
         <p className="note-date  "> Created at: {noteNoteDate} </p>{" "}
       </div>
@@ -77,7 +77,7 @@ function PopUpModal({
         backdrop="static"
         keyboard={false}
       >
-        {/* --------הפתק הגדול-------------- */}
+        {/* ------big note------- */}
 
         <Modal.Body className="modalGeneral    p-3 rounded border border-5 border-dark">
           <div className="fw-bold note-in-pack-title  d-flex justify-content-between">
@@ -115,7 +115,6 @@ function PopUpModal({
             placeholder="Write your note.."
           ></textarea>
 
-          {/* <p className="note-date">{noteNoteDate}</p> */}
 
           <button
             onClick={() => handleUpdate(noteid, textArea, inputText)}
